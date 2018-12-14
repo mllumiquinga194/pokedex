@@ -1,0 +1,54 @@
+<header class="header naranja header-fixed navbar container-fluid">
+    <div class="row">
+        <div class="brand col-sm-3">
+            <a href="#" class="navbar-brand">
+                <span class="fff">Ng-Pokédex</span>
+            </a>
+        </div>
+    </div>
+</header>
+<hr>
+<div class="full">
+    <div ng-repeat="item in habilitades" class=" fond dos card col-sm-2">
+        <img ng-click="showWindow( item )" class="card-img-top" src="asset/img/pokemon-icon.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"> <strong>{{ item.name }}</strong></h5>
+            <button ng-click="showWindow( item.url )" class="btn btn-primary">Vista Previa</button>
+            <a href="#/detalle/{{ item.name }}" class="btn btn-primary">Detalles</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="bookmarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header naranja">
+                <h5 class="modal-title" id="exampleModalLabel"> </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="card col-md-12 p-3">
+                <div class="row ">
+                    <div class="img col-md-4">
+                        <img class="w-100" src="{{ img }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-block">
+                            <h1 class="card-title"><strong>{{ name }} - #{{ id }}</strong></h1>
+                            <button class="btn btn-primary">{{ type }}</button>
+                            <p class="card-text"> <strong>{{ height }}m - {{ weight }}kg</strong></p>
+                            <p class="card-text text-justify">{{ description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <a href="#/detalle" class="btn btn-primary" data-dismiss="modal">Detalles</a> -->
+            </div>
+        </div>
+    </div>
+</div>
